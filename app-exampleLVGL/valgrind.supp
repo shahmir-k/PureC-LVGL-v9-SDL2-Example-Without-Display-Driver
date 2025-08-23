@@ -1,0 +1,91 @@
+# Suppress NVIDIA GLX driver leaks (definite + indirect) seen during dlopen/init
+{
+   nvidia_glcore_leaks_realloc
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   fun:realloc
+   obj:/usr/lib/x86_64-linux-gnu/libnvidia-glcore.so.*
+}
+
+{
+   nvidia_glcore_leaks_calloc
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libnvidia-glcore.so.*
+}
+
+{
+   nvidia_glx_leaks_realloc
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   fun:realloc
+   obj:/usr/lib/x86_64-linux-gnu/libGLX_nvidia.so.*
+}
+
+{
+   nvidia_glx_leaks_calloc
+   Memcheck:Leak
+   match-leak-kinds: definite,indirect
+   fun:calloc
+   obj:/usr/lib/x86_64-linux-gnu/libGLX_nvidia.so.*
+}
+
+# Suppress X11/SDL/DBus/udev/freetype/glib process-lifetime caches (still reachable)
+{
+   x11_reachable_locale
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   obj:/usr/lib/x86_64-linux-gnu/libX11.so.*
+}
+
+{
+   sdl2_reachable
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   obj:/usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.*
+}
+
+{
+   sdl2_ttf_freetype_reachable
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   obj:/usr/lib/x86_64-linux-gnu/libfreetype.so.*
+}
+
+{
+   dbus_reachable
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   obj:/usr/lib/x86_64-linux-gnu/libdbus-1.so.*
+}
+
+{
+   udev_reachable
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   obj:/usr/lib/x86_64-linux-gnu/libudev.so.*
+}
+
+{
+   glib_reachable
+   Memcheck:Leak
+   match-leak-kinds: reachable
+   obj:/usr/lib/x86_64-linux-gnu/libglib-2.0.so.*
+}
+
+# Suppress uninitialized sendmsg bytes from libxcb path used by GLX
+{
+   xcb_sendmsg_uninit
+   Memcheck:Param
+   sendmsg(msg.msg_iov[i])
+   obj:/usr/lib/x86_64-linux-gnu/libxcb.so.*
+}
+
+# Suppress posix_memalign size warnings from NVIDIA driver init
+{
+   nvidia_posix_memalign_size_param
+   Memcheck:Param
+   posix_memalign(size)
+   obj:/usr/lib/x86_64-linux-gnu/libnvidia-glcore.so.*
+}

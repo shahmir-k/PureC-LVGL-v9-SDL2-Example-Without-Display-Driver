@@ -1,0 +1,3 @@
+app-exampleLVGL/components/lvgl/*
+
+*.o
