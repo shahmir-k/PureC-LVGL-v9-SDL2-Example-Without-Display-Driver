@@ -40,6 +40,7 @@ If SDL2 can draw to your screen, then your device can run this app.
 ## 🚀 Features
 
 - 🖥️ Pure C implementation
+- 🏎️ EXTREMELY fast, lightweight, and resource efficient
 - ✅ Valgrind tested for proper memory management (no leaks)
 - 🎮 Full gamepad support with SDL2
 - ⌨️ Keyboard and mouse input handling
