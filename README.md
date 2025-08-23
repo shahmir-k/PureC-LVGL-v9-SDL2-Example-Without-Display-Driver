@@ -34,15 +34,7 @@ This project was started as an attempt to make a muOS application using pure C a
 
 Due to the low level implementation of this app it should be compatible with nearly all operating systems and embedded environments. 
 
-If SDL2 can run on your system, so can this app. 
-
-## 📸 Screenshots
-
-### Desktop Screenshot
-![Desktop Screenshot](pictures/desktop.png)
-
-### muOS Screenshot
-![muOS Interface](pictures/muOS.jpg)
+If SDL2 can draw to your screen, then your device can run this app. 
 
 
 ## 🚀 Features
@@ -57,6 +49,16 @@ If SDL2 can run on your system, so can this app.
 - 📦 Comprehensive build system
 - 🔄 Double-buffered rendering
 - 🎨 Modern UI with LVGL 9.3
+
+## 📸 Screenshots
+
+### Desktop Screenshot
+![Desktop Screenshot](pictures/desktop.png)
+
+### muOS Screenshot
+![muOS Interface](pictures/muOS.jpg)
+
+
 
 ## 📋 Build Prerequisites
 
