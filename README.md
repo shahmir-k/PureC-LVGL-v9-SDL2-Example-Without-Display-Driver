@@ -77,16 +77,22 @@ If SDL2 can draw to your screen, then your device can run this app.
 
 ### Normal Install
 
-move the app-exampleLVGL folder from the repo into your muOS applications folder
+Move the app-exampleLVGL folder from the repo into your muOS applications folder
 
-or 
+OR 
 
-place release archive in ARCHIVE folder of your muOS sdcard then install with archive manager
+Place release archive in ARCHIVE folder of your muOS sdcard then install with archive manager
 
 
-DONE!
+Done!
 
-### Building
+
+
+<br>
+<br>
+<br>
+
+### Building From Scratch (For Devs)
 
 For native (x86) build:
 ```bash
