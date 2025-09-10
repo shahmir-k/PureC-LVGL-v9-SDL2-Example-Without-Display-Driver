@@ -564,7 +564,17 @@ int main(int argc, char* argv[]) {
     lv_group_focus_obj(btn1);
     
     printf("Detected %d game controllers\n", SDL_NumJoysticks());
-
+    
+    // Print all game controllers
+    printf("Listing all game controllers detected:\n");
+    for (int i = 0; i < SDL_NumJoysticks(); i++) {
+        if (SDL_IsGameController(i)) {
+            printf("Controller %i: %s\n", i, SDL_GameControllerNameForIndex(i));
+        } else {
+            printf("Controller %i is not a game controller: %s\n", i, SDL_JoystickNameForIndex(i));
+            printf("Failed to open game controller %i: %s\n", i, SDL_GetError());
+        }
+    }
     // Initialize game controller
     for (int i = 0; i < SDL_NumJoysticks(); i++) {
         if (SDL_IsGameController(i)) {
@@ -579,6 +589,7 @@ int main(int argc, char* argv[]) {
             printf("Controller %i is not a game controller: %s\n", i, SDL_JoystickNameForIndex(i));
         }
     }
+
 
     // Initialize the menu system
     //initMenuSystem(renderer, font, cleanup);

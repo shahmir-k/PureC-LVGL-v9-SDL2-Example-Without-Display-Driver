@@ -1,5 +1,4 @@
 #include "input.h"
-#include "menu.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include "lv_sdl_private.h"
