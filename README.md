@@ -36,6 +36,8 @@ Due to the low level implementation of this app it should be compatible with nea
 
 If SDL2 can draw to your screen, then your device can run this app. 
 
+#### TODO
+- make multiple controllers work at the same time(ez im just lazy and keep forgetting about this)
 
 ## 🚀 Features
 
@@ -73,7 +75,16 @@ If SDL2 can draw to your screen, then your device can run this app.
 
 ## 🛠️ Installation
 
-### Dependencies
+### Normal Install
+
+move the app-exampleLVGL folder from the repo into your muOS applications folder
+
+or 
+
+place release archive in ARCHIVE folder of your muOS sdcard then install with archive manager
+
+
+DONE!
 
 ### Building
 
